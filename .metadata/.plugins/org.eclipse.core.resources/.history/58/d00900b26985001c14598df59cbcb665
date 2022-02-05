@@ -1,0 +1,10 @@
+package modelo;
+
+public class Menu {
+
+	public Menu(String plato, String precio) 
+	{
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package modelo;
+
+public class Menu {
+	
+	// ************************************************************************
+			// Atributos
+			// ************************************************************************
+
+			private String plato;
+			private String precio;
+
+	public Menu(String plato, String precio) 
+	{
+		
+	}
+
+}

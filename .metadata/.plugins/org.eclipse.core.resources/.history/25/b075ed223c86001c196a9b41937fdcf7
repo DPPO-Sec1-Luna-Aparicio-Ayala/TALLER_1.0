@@ -1,0 +1,87 @@
+package Console;
+
+import loader.calculator;
+
+public class Aplicacion
+{
+	
+	private  calculator calculadora;
+
+	public void ejecutarAplicacion()
+	{
+		System.out.println("El men� es: \n");
+
+		boolean continuar = true;
+		while (continuar)
+		{
+			try
+			{
+				mostrarMenu();
+				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
+				if (opcion_seleccionada == 1)
+					ejecutarCargarMenu();
+				else if (opcion_seleccionada == 2 && calculadora != null)
+					ejecutarIniciarNuevoPedido();
+				else if (opcion_seleccionada == 3 && calculadora != null)
+					ejecutarAdicionarAlPedido();
+				else if (opcion_seleccionada == 4 && calculadora != null)
+					ejecutarCerrarPedido();
+				else if (opcion_seleccionada == 5 && calculadora != null)
+					ejecutarConsultarPedido();
+				else if (opcion_seleccionada == 6)
+				{
+					System.out.println("Saliendo de la aplicación ...");
+					continuar = false;
+				}
+				else if (calculadora == null)
+				{
+					System.out.println("Para poder ejecutar esta opción primero debe cargar un archivo de atletas.");
+				}
+				else
+				{
+					System.out.println("Por favor seleccione una opción válida.");
+				}
+			}
+			catch (NumberFormatException e)
+			{
+				System.out.println("Debe seleccionar uno de los números de las opciones.");
+			}
+		}
+	}
+
+	private void ejecutarConsultarPedido() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void ejecutarCerrarPedido() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void ejecutarAdicionarAlPedido() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void ejecutarIniciarNuevoPedido() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void ejecutarCargarMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private String input(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private void mostrarMenu() {
+		// TODO Auto-generated method stub
+	}
+}
+		
+	

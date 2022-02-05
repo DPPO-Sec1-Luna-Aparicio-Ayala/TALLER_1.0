@@ -1,0 +1,31 @@
+package modelo;
+
+public class Menu {
+	
+	// ************************************************************************
+			// Atributos
+			// ************************************************************************
+
+			private String plato;
+			private String precio;
+
+	public Menu(String plate, String price) 
+	{
+		this.plato =plate;
+		this.precio=price;
+	}
+	
+	// ************************************************************************
+	// Métodos para consultar los atributos
+	// ************************************************************************
+	public String darPlato()
+	{
+		return plato;
+	}
+
+	public String darPrecio()
+	{
+		return precio;
+	}
+
+}

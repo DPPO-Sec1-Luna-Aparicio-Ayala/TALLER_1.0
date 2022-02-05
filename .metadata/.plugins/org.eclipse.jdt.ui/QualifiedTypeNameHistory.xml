@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="modelo.Combos"/>
+    <fullyQualifiedTypeName name="java.awt.Menu"/>
+    <fullyQualifiedTypeName name="modelo.Ingredientes"/>
+    <fullyQualifiedTypeName name="modelo.Menu"/>
+    <fullyQualifiedTypeName name="modelo.Ingrediente"/>
+    <fullyQualifiedTypeName name="modelo.Combo"/>
+    <fullyQualifiedTypeName name="loader.calculator"/>
+</qualifiedTypeNameHistroy>

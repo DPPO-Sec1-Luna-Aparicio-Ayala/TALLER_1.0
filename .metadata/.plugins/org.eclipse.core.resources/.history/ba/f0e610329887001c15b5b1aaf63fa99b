@@ -1,5 +1,6 @@
 package modelo;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,11 +18,16 @@ public class Pedido {
 	// ************************************************************************
 	public Pedido(String id, ArrayList<Combo> combos, ArrayList<ProductoMenu> basicos, ArrayList<ProductoAlterado> modificados)
 	{
-		
-		///for (Combo comboActual : combos)
-		///{
+		for (Combo comboActual : combos)
+		{
 			
-		///}
+		}
+		this.productoInicial = basico;
+		this.adiciones = extra;
+		this.sustracciones = menos;
 	}
-	
+=======
+public class Pedido {
+>>>>>>> c63210f336657613fb04036557ed7b2e3c988ab5
+
 }

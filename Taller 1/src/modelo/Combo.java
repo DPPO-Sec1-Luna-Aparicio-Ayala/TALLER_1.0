@@ -1,5 +1,7 @@
 package modelo;
 
+
+
 public class Combo
 {
 	// ************************************************************************
@@ -14,48 +16,44 @@ public class Combo
 	
 	
 	// ************************************************************************
-		// Constructores
-		// ************************************************************************
+	// Constructores
+	// ************************************************************************
 
-		public Combo(String combo, String desc, String ham,String papitas,String soda)
-		{
-			String descSinPorc = desc.replace("%", "");
-			double descDouble = Double.parseDouble(descSinPorc);
-			double descDecimal = descDouble / 100;
-			
-			ProductoMenu hamb = 
-			
-			this.comboName = combo;
-			this.descuento = descDecimal;
-			this.hamburguesa = ham;
-			this.papas = papitas;
-			this.bebida= soda;
-		}
+	public Combo(String combo, String desc, String ham,String papitas,String soda)
+	{
+		String descSinPorc = desc.replace("%", "");
+		double descDouble = Double.parseDouble(descSinPorc);
+		double descDecimal = descDouble / 100;
 		
-		// ************************************************************************
-		// Métodos para consultar los atributos
-		// ************************************************************************
-		public String darCombo()
-		{
-			return comboName;
-		}
-
+		this.comboName = combo;
+		this.descuento = descDecimal;
+		this.hamburguesa = ham;
+		this.papas = papitas;
+		this.bebida= soda;
+	}
+		
+	// ************************************************************************
+	// Métodos para consultar los atributos
+	// ************************************************************************
+	public String darCombo()
+	{
+		return comboName;
+	}
 		public double darDescuento()
-		{
-			return descuento;
-		}
-
+	{
+		return descuento;
+	}
 		public String darHamburguesa()
-		{
-			return hamburguesa;
-		}
-		
-		public String darPapas()
-		{
-			return papas;
-		}
-		public String darBebida()
-		{
-			return bebida;
-		}			
+	{
+		return hamburguesa;
+	}
+	
+	public String darPapas()
+	{
+		return papas;
+	}
+	public String darBebida()
+	{
+		return bebida;
+	}			
 }

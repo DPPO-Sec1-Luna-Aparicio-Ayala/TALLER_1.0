@@ -28,7 +28,7 @@ public class Aplicacion
 		{
 			try
 			{
-				mostrarMenu();
+				mostrarMenuu();
 				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
 				if (opcion_seleccionada == 1)
 					ejecutarCargarMenu();

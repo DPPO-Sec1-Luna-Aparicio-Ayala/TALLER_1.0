@@ -6,8 +6,8 @@ public class Combo
 	// Atributos
 	// ************************************************************************
 
-	private String comboName;
-	private double descuento;
+	private String comboname;
+	private String descuento;
 	private String hamburguesa;
 	private String papas;
 	private String bebida;
@@ -17,16 +17,10 @@ public class Combo
 		// Constructores
 		// ************************************************************************
 
-		public Combo(String combo, String desc, String ham,String papitas,String soda)
+		public Combo(String combo,String desc, String ham,String papitas,String soda)
 		{
-			String descSinPorc = desc.replace("%", "");
-			double descDouble = Double.parseDouble(descSinPorc);
-			double descDecimal = descDouble / 100;
-			
-			ProductoMenu hamb = 
-			
-			this.comboName = combo;
-			this.descuento = descDecimal;
+			this.comboname = combo;
+			this.descuento = desc;
 			this.hamburguesa = ham;
 			this.papas = papitas;
 			this.bebida= soda;
@@ -37,10 +31,10 @@ public class Combo
 		// ************************************************************************
 		public String darCombo()
 		{
-			return comboName;
+			return comboname;
 		}
 
-		public double darDescuento()
+		public String darDescuento()
 		{
 			return descuento;
 		}

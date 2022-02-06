@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="modelo.Combos"/>
     <fullyQualifiedTypeName name="java.awt.Menu"/>
     <fullyQualifiedTypeName name="modelo.Ingredientes"/>
@@ -15,4 +14,6 @@
     <fullyQualifiedTypeName name="loader.LoaderBurgers"/>
     <fullyQualifiedTypeName name="modelo.Ingrediente"/>
     <fullyQualifiedTypeName name="loader.Calculator"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

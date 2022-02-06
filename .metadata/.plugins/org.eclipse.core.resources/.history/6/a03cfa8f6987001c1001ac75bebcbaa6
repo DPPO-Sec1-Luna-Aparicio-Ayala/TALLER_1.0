@@ -21,15 +21,16 @@ public class Aplicacion
 
 	public void ejecutarAplicacion()
 	{
-		System.out.println("Restaurante \n");
+		System.out.println("El menú es: \n");
 
 		boolean continuar = true;
 		while (continuar)
 		{
 			try
 			{
-				mostrarMenu();
-				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
+				mostrarMenuu();
+				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opciÃ³n"));
+				continuar = false;
 				if (opcion_seleccionada == 1)
 					ejecutarCargarMenu();
 				else if (opcion_seleccionada == 2 && calculadora != null)

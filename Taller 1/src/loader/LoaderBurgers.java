@@ -48,6 +48,7 @@ public class LoaderBurgers
 			{
 				elCombo = new Combo(nombreCombo, descuento, hamburguesa,papas,bebida);
 				combo.put(nombreCombo, elCombo);
+			 
 			}
 
 			linea1 = br1.readLine(); // Leer la siguiente línea

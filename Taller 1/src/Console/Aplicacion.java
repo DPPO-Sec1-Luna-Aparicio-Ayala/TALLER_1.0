@@ -70,7 +70,7 @@ public class Aplicacion
 		System.out.println("3. Agregar un elemento a un pedido");
 		System.out.println("4. Cerrar un pedido y guardar factura");
 		System.out.println("5. Consultar la información de un pedido dado su ID");
-		System.out.println("6. Salir de la aplicación");
+		System.out.println("6. Salir de la aplicación"); 
 	}
 	
 	

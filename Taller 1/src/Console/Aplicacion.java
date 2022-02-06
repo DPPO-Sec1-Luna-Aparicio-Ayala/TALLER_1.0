@@ -28,8 +28,9 @@ public class Aplicacion
 		{
 			try
 			{
-				mostrarMenu();
+				mostrarMenuu();
 				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
+				continuar = false;
 				if (opcion_seleccionada == 1)
 					ejecutarCargarMenu();
 				else if (opcion_seleccionada == 2 && calculadora != null)
@@ -132,13 +133,30 @@ public class Aplicacion
 
 	}
 
-	private String input(String string) {
-		// TODO Auto-generated method stub
+	private String input(String mensaje) {
+		try
+		{
+			System.out.print(mensaje + ": ");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			return reader.readLine();
+		}
+		catch (IOException e)
+		{
+			System.out.println("Error leyendo de la consola");
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	private void mostrarMenu() {
 		// TODO Auto-generated method stub
+	}
+	
+	public static void main(String[] args)
+	
+	{
+		Aplicacion consola = new Aplicacion();
+		consola.ejecutarAplicacion();
 	}
 }
 		

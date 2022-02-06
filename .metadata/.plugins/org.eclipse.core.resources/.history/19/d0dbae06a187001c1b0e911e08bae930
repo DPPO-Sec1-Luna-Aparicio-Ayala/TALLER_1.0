@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import loader.Restaurante;
+import loader.Calculator;
 import loader.LoaderBurgers;
 import loader.Restaurante;
 import modelo.Combo;
@@ -91,6 +91,7 @@ public class Aplicacion
 	}
 
 	private void ejecutarIniciarNuevoPedido() {
+		// TODO Auto-generated method stub
 		
 	}
 

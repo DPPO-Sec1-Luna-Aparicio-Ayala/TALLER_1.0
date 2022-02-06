@@ -15,7 +15,7 @@ public class LoaderBurgers
 
 	public static Restaurante cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
 	{
-		Map<String, Combo> combos = new HashMap<>();
+		Map<String, Combo> combo = new HashMap<>();
 		Map<String, Ingrediente> ingredientes = new HashMap<>();
 		Map<String, ProductoMenu> menu = new HashMap<>();
 
@@ -44,11 +44,11 @@ public class LoaderBurgers
 			// Si no se había encontrado antes a ese atleta, se agrega como un nuevo atleta.
 			// Acá suponemos que no hay atletas con el mismo nombre
 			
-			Combo elCombo = combos.get(nombreCombo);
+			Combo elCombo = combo.get(nombreCombo);
 			if (elCombo == null)
 			{
 				elCombo = new Combo(nombreCombo, descuento, hamburguesa,papas,bebida);
-				combos.put(nombreCombo, elCombo);
+				combo.put(nombreCombo, elCombo);
 			 
 			}
 
@@ -95,9 +95,7 @@ public class LoaderBurgers
 		br3.close();
 		
 
-		Restaurante calculadora = new Restaurante(combos, ingredientes, menu);
+		Calculator calculadora = new Calculator(combo, ingredientes, menu);
 		return calculadora;
 	}
-
 }
-

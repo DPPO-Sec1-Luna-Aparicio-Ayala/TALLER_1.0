@@ -111,6 +111,7 @@ public class Aplicacion
 			calculadora = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
 			System.out.println("Se cargaron los archivos " + archivo1 + archivo2 + archivo3 + " con información del menú.");
 			
+			calculadora.
 			/**
 			Collection<String> eventos = calculadora.darNombresDeportes();
 			System.out.println("Los deportes para los que se tiene información son:");

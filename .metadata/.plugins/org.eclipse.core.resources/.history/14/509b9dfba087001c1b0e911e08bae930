@@ -8,9 +8,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import loader.Restaurante;
+import loader.Calculator;
 import loader.LoaderBurgers;
-import loader.Restaurante;
 import modelo.Combo;
 import modelo.Ingrediente;
 import modelo.ProductoMenu;
@@ -18,7 +17,7 @@ import modelo.ProductoMenu;
 public class Aplicacion
 {
 	
-	private  Restaurante calculadora;
+	private  Calculator calculadora;
 
 	public void ejecutarAplicacion()
 	{
@@ -91,6 +90,7 @@ public class Aplicacion
 	}
 
 	private void ejecutarIniciarNuevoPedido() {
+		// TODO Auto-generated method stub
 		
 	}
 

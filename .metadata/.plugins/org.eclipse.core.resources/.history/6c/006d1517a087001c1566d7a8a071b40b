@@ -13,26 +13,26 @@ import modelo.ProductoMenu;
 public class LoaderBurgers
 {
 
-	public static Restaurante cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
+	public static Calculator cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
 	{
-		Map<String, Combo> combos = new HashMap<>();
+		Map<String, Combo> combo = new HashMap<>();
 		Map<String, Ingrediente> ingredientes = new HashMap<>();
 		Map<String, ProductoMenu> menu = new HashMap<>();
 
-		// Abrir el archivo y leerlo lÌnea por lÌnea usando un BufferedReader
+		// Abrir el archivo y leerlo l√≠nea por l√≠nea usando un BufferedReader
 		BufferedReader br1 = new BufferedReader(new FileReader(archivo1));
-		String linea1 = br1.readLine(); 
-		
+		String linea1 = br1.readLine(); // La primera l√≠nea del archivo se ignora porque √∫nicamente tiene los t√≠tulos de
+									// las columnas
 		BufferedReader br2 = new BufferedReader(new FileReader(archivo2));
 		String linea2 = br2.readLine();
 		
 		BufferedReader br3 = new BufferedReader(new FileReader(archivo3));
 		String linea3 = br3.readLine();
 		
-		linea1 = br1.readLine();
+		
 		while (linea1 != null) // Cuando se llegue al final del archivo, linea tendr√° el valor null
 		{
-			// Separar los valores que estaban en una lÌnea
+			// Separar los valores que estaban en una l√≠nea
 			String[] partes = linea1.split(";");
 			String nombreCombo = partes[0];
 			String descuento = partes[1];
@@ -41,14 +41,13 @@ public class LoaderBurgers
 			String bebida = partes[4];
 			
 
-			// Si no se habÌa encontrado antes a ese atleta, se agrega como un nuevo atleta.
-			// Ac· suponemos que no hay atletas con el mismo nombre
-			
-			Combo elCombo = combos.get(nombreCombo);
+			// Si no se hab√≠a encontrado antes a ese atleta, se agrega como un nuevo atleta.
+			// Ac√° suponemos que no hay atletas con el mismo nombre
+			Combo elCombo = combo.get(nombreCombo);
 			if (elCombo == null)
 			{
 				elCombo = new Combo(nombreCombo, descuento, hamburguesa,papas,bebida);
-				combos.put(nombreCombo, elCombo);
+				combo.put(nombreCombo, elCombo);
 			 
 			}
 
@@ -56,8 +55,6 @@ public class LoaderBurgers
 		}
 
 		br1.close();
-		
-		linea2 = br2.readLine();
 		while (linea2 != null)
 		{
 			String[] partes2 = linea2.split(";");
@@ -75,8 +72,6 @@ public class LoaderBurgers
 		}
 		
 		br2.close();
-		
-		linea3 = br3.readLine();
 		while (linea3 != null) 
 		{
 			String[] partes3=linea3.split(";");
@@ -95,9 +90,7 @@ public class LoaderBurgers
 		br3.close();
 		
 
-		Restaurante calculadora = new Restaurante(combos, ingredientes, menu);
+		Calculator calculadora = new Calculator(combo, ingredientes, menu);
 		return calculadora;
 	}
-
 }
-

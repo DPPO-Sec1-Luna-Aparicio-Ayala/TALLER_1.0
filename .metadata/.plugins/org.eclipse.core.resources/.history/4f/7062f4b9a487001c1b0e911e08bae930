@@ -24,6 +24,8 @@ public class Pedido {
 			String principal = comboActual.darHamburguesa();
 			String acompañamiento = comboActual.darPapas();
 			String bebida = comboActual.darBebida();
+			
+			comboActual.get()
 		}
 	}
 	

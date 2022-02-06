@@ -1,4 +1,4 @@
-INDEX VERSION 1.131+C:\Users\Usuario\OneDrive - Universidad de los Andes\Documentos\3er Semestre\DPOO\Taller 1 - Hamburguesas_esqueleto\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.131+C:\Users\USER\Documents\DPOO\TALLER 1.0\Taller 1 - Hamburguesas\.metadata\.plugins\org.eclipse.jdt.core
+3053739126.index
 853661275.index
 1865797976.index
-2853448499.index

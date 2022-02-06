@@ -1,14 +1,6 @@
 package Console;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
-import loader.Calculator;
+import loader.calculator;
 import loader.LoaderBurgers;
 import modelo.Combo;
 import modelo.Ingrediente;
@@ -17,7 +9,7 @@ import modelo.ProductoMenu;
 public class Aplicacion
 {
 	
-	private  Calculator calculadora;
+	private  calculator calculadora;
 
 	public void ejecutarAplicacion()
 	{
@@ -103,9 +95,9 @@ public class Aplicacion
 	{
 		System.out.println("\n" + "Cargar la información de los archivos" + "\n");
 
-		String archivo1 = "./data/combos.txt";
-		String archivo2 = "./data/ingredientes.txt";
-		String archivo3 = "./data/menu.txt";
+		String archivo1 = "./";
+		String archivo2 = "";
+		String archivo3 = "";
 		try
 		{
 			calculadora = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);

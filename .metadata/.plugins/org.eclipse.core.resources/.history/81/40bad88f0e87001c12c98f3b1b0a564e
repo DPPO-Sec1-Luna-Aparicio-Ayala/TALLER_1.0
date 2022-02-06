@@ -13,7 +13,7 @@ import modelo.ProductoMenu;
 public class LoaderBurgers
 {
 
-	public static Calculator cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
+	public static calculator cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
 	{
 		Map<String, Combo> combo = new HashMap<>();
 		Map<String, Ingrediente> ingredientes = new HashMap<>();
@@ -89,7 +89,7 @@ public class LoaderBurgers
 		br3.close();
 		
 
-		Calculator calculadora = new Calculator(combo, ingredientes, menu);
+		calculator calculadora = new calculator(combo, ingredientes, menu);
 		return calculadora;
 	}
 }

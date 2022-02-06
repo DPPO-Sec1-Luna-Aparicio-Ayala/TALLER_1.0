@@ -10,7 +10,9 @@
     <fullyQualifiedTypeName name="java.awt.Menu"/>
     <fullyQualifiedTypeName name="modelo.Ingredientes"/>
     <fullyQualifiedTypeName name="modelo.Menu"/>
-    <fullyQualifiedTypeName name="modelo.Ingrediente"/>
     <fullyQualifiedTypeName name="modelo.Combo"/>
     <fullyQualifiedTypeName name="loader.calculator"/>
+    <fullyQualifiedTypeName name="loader.LoaderBurgers"/>
+    <fullyQualifiedTypeName name="modelo.Ingrediente"/>
+    <fullyQualifiedTypeName name="loader.Calculator"/>
 </qualifiedTypeNameHistroy>

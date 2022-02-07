@@ -29,7 +29,6 @@ public class LoaderBurgers
 		BufferedReader br3 = new BufferedReader(new FileReader(archivo3));
 		String linea3 = br3.readLine();
 		
-		linea1 = br1.readLine();
 		while (linea1 != null) // Cuando se llegue al final del archivo, linea tendrÃ¡ el valor null
 		{
 			// Separar los valores que estaban en una línea
@@ -57,7 +56,6 @@ public class LoaderBurgers
 
 		br1.close();
 		
-		linea2 = br2.readLine();
 		while (linea2 != null)
 		{
 			String[] partes2 = linea2.split(";");
@@ -75,12 +73,8 @@ public class LoaderBurgers
 		}
 		
 		br2.close();
-<<<<<<< HEAD
+
 		int o = 1;
-=======
-		
-		linea3 = br3.readLine();
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
 		while (linea3 != null) 
 		{
 			String[] partes3=linea3.split(";");
@@ -109,14 +103,8 @@ public class LoaderBurgers
 		}
 		*/
 	
-
-<<<<<<< HEAD
-		Restaurante calculadora = new Restaurante(combo, ingredientes, menu);
-		
-=======
-		Restaurante calculadora = new Restaurante(combos, ingredientes, menu);
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
-		return calculadora;
+		Restaurante restaurante = new Restaurante(combos, ingredientes, menu);
+		return restaurante;
 	}
 
 }

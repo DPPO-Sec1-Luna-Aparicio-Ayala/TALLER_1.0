@@ -8,38 +8,37 @@ import modelo.Ingrediente;
 import modelo.ProductoMenu;
 
 public class Restaurante {
-
-		private List<Combo> combo;
-		private List <Ingrediente> ingredientes;
-		private List<ProductoMenu> menu;
+	
+		private ArrayList<Combo> combos;
+		private ArrayList <Ingrediente> ingredientes;
+		private ArrayList<ProductoMenu> menu;
 		
 		// ************************************************************************
 		// Constructores
 		// ************************************************************************
 
-<<<<<<< HEAD
-		/**
-		 * Construye una calculadora de estadísticas, guardando la información
-		 * proporcionada sobre atletas, países y eventos.
-		 * 
-		 * @param atletas Un mapa con los atletas, donde las llaves son los nombres de
-		 *                los atletas y los valores son los atletas.
-		 * @param paises  Un mapa con los países, donde las llaves son los nombres de
-		 *                los países y los valores son los países.
-		 * @param eventos Una lista con los eventos.
-		 */
-=======
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
+
+
+
 		public Restaurante(Map<String, Combo> combo, Map<String, Ingrediente> ingredientes, Map<String, ProductoMenu> menu)
 		{
-			this.combo = new ArrayList<Combo>(combo.values());
+			this.combos = new ArrayList<Combo>(combo.values());
 			this.ingredientes = new ArrayList<Ingrediente>(ingredientes.values());
 			this.menu = new ArrayList<ProductoMenu>(menu.values());
 		}
 		
-<<<<<<< HEAD
+		public ArrayList darCombo()
+		{
+			return combos;
+		}
 		
-		
-=======
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
+		public ArrayList darIngredientes()
+		{
+			return ingredientes;
+		}
+		public ArrayList darMenu()
+		{
+			return menu;
+		}
+
 		}

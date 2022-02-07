@@ -21,6 +21,7 @@ public class Aplicacion
 {
 	
 	private  Restaurante calculadora;
+	private Restaurante restaurante;
 
 	public void ejecutarAplicacion()
 	{
@@ -93,19 +94,28 @@ public class Aplicacion
 	}
 
 	private void ejecutarIniciarNuevoPedido() {
-<<<<<<< HEAD
 		
 		String opcion_seleccion = input("Introduzca los numeros de los alimentos que desee pedir y separelos con una coma (Ej: 1,4,6)");
 		String [] partes = opcion_seleccion.split(",");
-		ArrayList pedido = new ArrayList();
+		ArrayList<Integer> pedido = new ArrayList<Integer>();
 		for (String caracter: partes)
 		{
 			int num = Integer.parseInt(caracter);
 			pedido.add(num);
 		}
+		ArrayList<ProductoMenu> menu = restaurante.darMenu();
+		for (int numero: pedido) {
 			
-=======
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
+			if (numero < menu.size()) {
+			ProductoMenu dato = menu.get(numero);
+			String nombre = dato.darPlato();
+			double precio = dato.darPrecio();
+			System.out.println(nombre + precio);
+			}
+		System.out.println("Que desea hacer a continuación? ");	
+			
+			
+		}
 		
 	}
 
@@ -123,9 +133,13 @@ public class Aplicacion
 		String archivo3 = "./data/menu.txt";
 		try
 		{
-			calculadora = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
+			Restaurante restaurante = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
 			System.out.println("Se cargaron los archivos " + archivo1 + archivo2 + archivo3 + " con información del menú.");
-			
+			ArrayList<Combo> combos = restaurante.darCombo();
+			for (Combo comboActual: combos) {
+				String nombre = comboActual.darCombo();
+				System.out.println("nuevo print: " + nombre);
+			}
 			/**
 			Collection<String> eventos = calculadora.darNombresDeportes();
 			System.out.println("Los deportes para los que se tiene información son:");

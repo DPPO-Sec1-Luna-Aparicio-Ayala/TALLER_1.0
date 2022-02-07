@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +14,6 @@ import loader.Restaurante;
 import modelo.Combo;
 import modelo.Ingrediente;
 import modelo.ProductoMenu;
-
 
 public class Aplicacion
 {
@@ -31,7 +29,7 @@ public class Aplicacion
 		{
 			try
 			{
-				mostrarMenuu();
+				mostrarMenu();
 				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
 				if (opcion_seleccionada == 1)
 					ejecutarCargarMenu();
@@ -93,19 +91,6 @@ public class Aplicacion
 	}
 
 	private void ejecutarIniciarNuevoPedido() {
-<<<<<<< HEAD
-		
-		String opcion_seleccion = input("Introduzca los numeros de los alimentos que desee pedir y separelos con una coma (Ej: 1,4,6)");
-		String [] partes = opcion_seleccion.split(",");
-		ArrayList pedido = new ArrayList();
-		for (String caracter: partes)
-		{
-			int num = Integer.parseInt(caracter);
-			pedido.add(num);
-		}
-			
-=======
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
 		
 	}
 
@@ -126,6 +111,7 @@ public class Aplicacion
 			calculadora = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
 			System.out.println("Se cargaron los archivos " + archivo1 + archivo2 + archivo3 + " con información del menú.");
 			
+			calculadora.
 			/**
 			Collection<String> eventos = calculadora.darNombresDeportes();
 			System.out.println("Los deportes para los que se tiene información son:");
@@ -134,11 +120,6 @@ public class Aplicacion
 				System.out.println(" - " + dep);
 			}
 			*/
-			/**ProductoMenu menu = menu;
-			
-			*/
-
-			
 		}
 		catch (FileNotFoundException e)
 		{

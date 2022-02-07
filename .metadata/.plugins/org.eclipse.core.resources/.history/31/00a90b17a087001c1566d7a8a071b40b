@@ -7,28 +7,25 @@ public class ProductoMenu {
 			// ************************************************************************
 
 			private String plato;
-			private double precio;
+			private String precio;
 
 	public ProductoMenu(String plate, String price) 
 	{
 		this.plato =plate;
-		double precioDouble = Double.parseDouble(price);
-		this.precio = precioDouble;
+		this.precio=price;
 	}
 	
 	// ************************************************************************
-	// Métodos para consultar los atributos
+	// MÃ©todos para consultar los atributos
 	// ************************************************************************
 	public String darPlato()
 	{
 		return plato;
 	}
 
-	public double darPrecio()
+	public String darPrecio()
 	{
 		return precio;
 	}
-
-
 
 }

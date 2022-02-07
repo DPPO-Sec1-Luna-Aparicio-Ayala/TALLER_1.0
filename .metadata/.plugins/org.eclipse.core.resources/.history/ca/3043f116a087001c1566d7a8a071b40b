@@ -17,7 +17,6 @@ public class Restaurante {
 		// Constructores
 		// ************************************************************************
 
-<<<<<<< HEAD
 		/**
 		 * Construye una calculadora de estadísticas, guardando la información
 		 * proporcionada sobre atletas, países y eventos.
@@ -28,8 +27,6 @@ public class Restaurante {
 		 *                los países y los valores son los países.
 		 * @param eventos Una lista con los eventos.
 		 */
-=======
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
 		public Restaurante(Map<String, Combo> combo, Map<String, Ingrediente> ingredientes, Map<String, ProductoMenu> menu)
 		{
 			this.combo = new ArrayList<Combo>(combo.values());
@@ -37,9 +34,6 @@ public class Restaurante {
 			this.menu = new ArrayList<ProductoMenu>(menu.values());
 		}
 		
-<<<<<<< HEAD
 		
 		
-=======
->>>>>>> a784944e52cc90600082aa915c58418a91fa84f0
 		}

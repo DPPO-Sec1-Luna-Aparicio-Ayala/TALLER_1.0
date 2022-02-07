@@ -13,7 +13,7 @@ import modelo.ProductoMenu;
 public class LoaderBurgers
 {
 
-	public static Calculator cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
+	public static Restaurante cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
 	{
 		Map<String, Combo> combo = new HashMap<>();
 		Map<String, Ingrediente> ingredientes = new HashMap<>();
@@ -72,6 +72,7 @@ public class LoaderBurgers
 		}
 		
 		br2.close();
+		int o = 1;
 		while (linea3 != null) 
 		{
 			String[] partes3=linea3.split(";");
@@ -84,13 +85,25 @@ public class LoaderBurgers
 				elMenu=new ProductoMenu(plato,precio);
 				menu.put(plato, elMenu);
 				
+				System.out.println(o + ". " + plato + " " + precio);
+				o += 1;
 			}
 			linea3 = br3.readLine();
 		}
 		br3.close();
-		
+		/**
+		for (int i = 0; i < menu.size(); i++)
+		{
+				
+				ProductoMenu Plato = menu.get(i);
+				ProductoMenu Precio = menu.get(i);
+				System.out.println(Plato);
+		}
+		*/
+	
 
-		Calculator calculadora = new Calculator(combo, ingredientes, menu);
+		Restaurante calculadora = new Restaurante(combo, ingredientes, menu);
+		
 		return calculadora;
 	}
 }

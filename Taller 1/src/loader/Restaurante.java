@@ -7,7 +7,7 @@ import modelo.Combo;
 import modelo.Ingrediente;
 import modelo.ProductoMenu;
 
-public class Calculator {
+public class Restaurante {
 
 		private List<Combo> combo;
 		private List <Ingrediente> ingredientes;
@@ -27,11 +27,13 @@ public class Calculator {
 		 *                los países y los valores son los países.
 		 * @param eventos Una lista con los eventos.
 		 */
-		public Calculator(Map<String, Combo> combo, Map<String, Ingrediente> ingredientes, Map<String, ProductoMenu> menu)
+		public Restaurante(Map<String, Combo> combo, Map<String, Ingrediente> ingredientes, Map<String, ProductoMenu> menu)
 		{
 			this.combo = new ArrayList<Combo>(combo.values());
 			this.ingredientes = new ArrayList<Ingrediente>(ingredientes.values());
 			this.menu = new ArrayList<ProductoMenu>(menu.values());
 		}
+		
+		
 		
 		}

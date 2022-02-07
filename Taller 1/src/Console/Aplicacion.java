@@ -4,20 +4,22 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import loader.Calculator;
+import loader.Restaurante;
 import loader.LoaderBurgers;
 import modelo.Combo;
 import modelo.Ingrediente;
 import modelo.ProductoMenu;
 
+
 public class Aplicacion
 {
 	
-	private  Calculator calculadora;
+	private  Restaurante calculadora;
 
 	public void ejecutarAplicacion()
 	{
@@ -28,7 +30,7 @@ public class Aplicacion
 		{
 			try
 			{
-				mostrarMenu();
+				mostrarMenuu();
 				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
 				if (opcion_seleccionada == 1)
 					ejecutarCargarMenu();
@@ -90,7 +92,16 @@ public class Aplicacion
 	}
 
 	private void ejecutarIniciarNuevoPedido() {
-		// TODO Auto-generated method stub
+		
+		String opcion_seleccion = input("Introduzca los numeros de los alimentos que desee pedir y separelos con una coma (Ej: 1,4,6)");
+		String [] partes = opcion_seleccion.split(",");
+		ArrayList pedido = new ArrayList();
+		for (String caracter: partes)
+		{
+			int num = Integer.parseInt(caracter);
+			pedido.add(num);
+		}
+			
 		
 	}
 
@@ -119,6 +130,11 @@ public class Aplicacion
 				System.out.println(" - " + dep);
 			}
 			*/
+			/**ProductoMenu menu = menu;
+			
+			*/
+
+			
 		}
 		catch (FileNotFoundException e)
 		{

@@ -14,7 +14,6 @@ import loader.LoaderBurgers;
 import loader.Restaurante;
 import modelo.Combo;
 import modelo.Ingrediente;
-import modelo.Pedido;
 import modelo.ProductoMenu;
 
 
@@ -23,9 +22,6 @@ public class Aplicacion
 	
 	private  Restaurante calculadora;
 	private Restaurante restaurante;
-	private ArrayList<Pedido> pedidos;
-	
-	this.pedidos = new ArrayList<Pedido>();
 
 	public void ejecutarAplicacion()
 	{
@@ -98,6 +94,7 @@ public class Aplicacion
 	}
 
 	private void ejecutarIniciarNuevoPedido() {
+		
 		String opcion_seleccion = input("Introduzca los numeros de los alimentos que desee pedir y separelos con una coma (Ej: 1,4,6)");
 		String [] partes = opcion_seleccion.split(",");
 		ArrayList<Integer> pedido = new ArrayList<Integer>();
@@ -106,26 +103,15 @@ public class Aplicacion
 			int num = Integer.parseInt(caracter);
 			pedido.add(num);
 		}
-		
-		
-		Map<String, ProductoMenu> menu = restaurante.darMenu();
-		ArrayList<Combo> combos = restaurante.darCombos(); 
+		ArrayList<ProductoMenu> menu = restaurante.darMenu();
 		for (int numero: pedido) {
 			
-			if ((numero < 5) && (numero < (combos.size())))
-			{
-				Combo comboPedido = combos.get(numero);
-				
-			}
-			
-			if (numero < (menu.size()-5)) {
+			if (numero < menu.size()) {
 			ProductoMenu dato = menu.get(numero);
 			String nombre = dato.darPlato();
 			double precio = dato.darPrecio();
 			System.out.println(nombre + precio);
 			}
-			
-		Pedido nuevoPedido = new Pedido(id, combosPedidos, basicos, modificados);
 		System.out.println("Que desea hacer a continuación? ");	
 			
 			
@@ -147,11 +133,11 @@ public class Aplicacion
 		String archivo3 = "./data/menu.txt";
 		try
 		{
-			this.restaurante = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
+			Restaurante restaurante = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
 			System.out.println("Se cargaron los archivos " + archivo1 + archivo2 + archivo3 + " con información del menú.");
-			ArrayList<Combo> combos = restaurante.darCombos();
+			ArrayList<Combo> combos = restaurante.darCombo();
 			
-			System.out.println("\nCOMBOS");
+			System.out.println("\nCOMBOS")
 			int n = 0;
 			for (Combo comboActual: combos) {
 				n ++;
@@ -159,18 +145,17 @@ public class Aplicacion
 				double precio = comboActual.darPrecio();
 				System.out.println(n + ". " + nombre + " Precio: " + precio);
 			}
-				
-			System.out.println("\nPRODUCTOS BÁSICOS");
-			Map<String, ProductoMenu> menu = restaurante.darMenu();
-			ArrayList<ProductoMenu> productosArray = new ArrayList<ProductoMenu>(menu.values());
-			
-			for (ProductoMenu productoActual : productosArray) {
-				n ++;
-				String nombre = productoActual.darPlato();
-				double precio = productoActual.darPrecio();
-			    System.out.println(n + ". " + nombre + " Precio: " + precio);
+			/**
+			Collection<String> eventos = calculadora.darNombresDeportes();
+			System.out.println("Los deportes para los que se tiene información son:");
+			for (String dep : eventos)
+			{
+				System.out.println(" - " + dep);
 			}
-		
+			*/
+			/**ProductoMenu menu = menu;
+			
+			*/
 
 			
 		}

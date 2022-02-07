@@ -5,15 +5,13 @@ import java.util.Map;
 
 import modelo.Combo;
 import modelo.Ingrediente;
-import modelo.Pedido;
 import modelo.ProductoMenu;
 
 public class Restaurante {
 	
-		private ArrayList<Combo> combos;
+		private Map<String, Combo> combos;
 		private Map<String, Ingrediente> ingredientes;
 		private Map<String, ProductoMenu> menu;
-		private ArrayList<Pedido> pedidos;
 		
 		// ************************************************************************
 		// Constructores
@@ -22,13 +20,12 @@ public class Restaurante {
 
 		public Restaurante(Map<String, Combo> combo, Map<String, Ingrediente> ingredientes, Map<String, ProductoMenu> menu)
 		{
-			this.combos = new ArrayList<Combo>(combo.values());
+			this.combos = combo;
 			this.ingredientes = ingredientes;
 			this.menu = menu;
-			this.pedidos = new ArrayList<Pedido>();
 		}
 		
-		public ArrayList<Combo> darCombos()
+		public Map<String, Combo> darCombo()
 		{
 			return combos;
 		}
@@ -41,10 +38,5 @@ public class Restaurante {
 		{
 			return menu;
 		}
-		public ArrayList<Pedido> darPedidos()
-		{
-			return pedidos;
-		}
-		
 
 		}

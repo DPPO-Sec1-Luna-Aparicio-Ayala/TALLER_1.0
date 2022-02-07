@@ -29,6 +29,32 @@ public class LoaderBurgers
 		BufferedReader br3 = new BufferedReader(new FileReader(archivo3));
 		String linea3 = br3.readLine();
 		
+		while (linea1 != null) // Cuando se llegue al final del archivo, linea tendrÃ¡ el valor null
+		{
+			// Separar los valores que estaban en una línea
+			String[] partes = linea1.split(";");
+			String nombreCombo = partes[0];
+			String descuento = partes[1];
+			String hamburguesa = partes[2];
+			String papas = partes[3];
+			String bebida = partes[4];
+			
+
+			// Si no se había encontrado antes a ese atleta, se agrega como un nuevo atleta.
+			// Acá suponemos que no hay atletas con el mismo nombre
+			
+			Combo elCombo = combos.get(nombreCombo);
+			if (elCombo == null)
+			{
+				elCombo = new Combo(nombreCombo, descuento, hamburguesa,papas,bebida);
+				combos.put(nombreCombo, elCombo);
+			 
+			}
+
+			linea1 = br1.readLine(); // Leer la siguiente lÃ­nea
+		}
+
+		br1.close();
 		
 		while (linea2 != null)
 		{
@@ -67,33 +93,7 @@ public class LoaderBurgers
 			linea3 = br3.readLine();
 		}
 		br3.close();
-		
-		while (linea1 != null) // Cuando se llegue al final del archivo, linea tendrÃ¡ el valor null
-		{
-			// Separar los valores que estaban en una línea
-			String[] partes = linea1.split(";");
-			String nombreCombo = partes[0];
-			String descuento = partes[1];
-			String hamburguesa = partes[2];
-			String papas = partes[3];
-			String bebida = partes[4];
-			
-
-			// Si no se había encontrado antes a ese atleta, se agrega como un nuevo atleta.
-			// Acá suponemos que no hay atletas con el mismo nombre
-			
-			Combo elCombo = combos.get(nombreCombo);
-			if (elCombo == null)
-			{
-				elCombo = new Combo(nombreCombo, descuento, hamburguesa, papas, bebida, menu);
-				combos.put(nombreCombo, elCombo);
-			 
-			}
-
-			linea1 = br1.readLine(); // Leer la siguiente lÃ­nea
-		}
-
-		br1.close();/**
+		/**
 		for (int i = 0; i < menu.size(); i++)
 		{
 				

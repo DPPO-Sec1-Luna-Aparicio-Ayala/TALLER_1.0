@@ -32,7 +32,7 @@ public class Combo
 		this.papas = menuProductos.get(papitas);
 		this.bebida= menuProductos.get(soda);
 		double precio = hamburguesa.darPrecio() + papas.darPrecio() + bebida.darPrecio();
-		this.precio = precio - (precio * descuento);
+		this.precio = precio * descuento;
 		
 		
 	}

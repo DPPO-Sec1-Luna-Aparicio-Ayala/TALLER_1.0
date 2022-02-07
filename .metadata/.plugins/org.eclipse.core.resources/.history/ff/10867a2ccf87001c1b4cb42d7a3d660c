@@ -21,22 +21,9 @@ public class Pedido {
 		
 		for (Combo comboActual : combos)
 		{
-			String nombreCombo = comboActual.darNombreCombo();
-			double precio = comboActual.darPrecio();
-			combos.add(comboActual);
-			this.valorNeto += precio;
-		}
-		
-		for (ProductoMenu productoActual : basicos)
-		{
-			double precio = productoActual.darPrecio();
-			productosBasicos.add(productoActual);
-			this.valorNeto += precio;
-		}
-		
-		for (ProductoAlterado productoActual : modificados)
-		{
-			
+			ProductoMenu principal = comboActual.darHamburguesa();
+			ProductoMenu acompañamiento = comboActual.darPapas();
+			ProductoMenu bebida = comboActual.darBebida();
 		}
 	}
 	

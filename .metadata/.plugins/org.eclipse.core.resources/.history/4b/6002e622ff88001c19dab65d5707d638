@@ -52,24 +52,16 @@ public class Restaurante {
 		public void añadirPedido(Pedido nuevoPedido) {
 			nuevoPedido.asignarID(pedidos.size()+1);
 			this.pedidos.add(nuevoPedido);
-			this.pedidoEnCurso = nuevoPedido;
 			
 		}
 		
 		public Pedido darPedidoActual(){
 			if (pedidos.size() > 0) {
-				return pedidos.get(pedidos.size()-1);
+				return pedidos.get(pedidos.size());
 			}
 			
-			else {
+			else
 				return null;
-			}
-		}
-		
-		public void actualizarPedidoActual(Pedido pedido) {
-			this.pedidoEnCurso = pedido;
-			pedidos.get(pedidos.size()-1).actualizar(pedido);
-			
 		}
 
 	}

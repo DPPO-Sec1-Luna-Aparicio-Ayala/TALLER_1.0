@@ -91,54 +91,54 @@ public class Aplicacion
 	}
 
 	private void ejecutarAdicionarAlPedido() {
-		Pedido pedidoActual = restaurante.darPedidoActual();
+		// TODO Auto-generated method stub
 		
-		if (pedidoActual != null) {
-			ArrayList<Producto> menuCompleto = new ArrayList<Producto>(restaurante.darCombos());
-			menuCompleto.addAll(restaurante.darMenu());
-			int w = 0;
-			for (Producto productoActual : menuCompleto) {
-				System.out.println(w + ". " + productoActual.darNombre() + " | Precio: " + productoActual.darPrecio());
-				w ++;
-			}
-		String p = input("Por favor ingrese el número de la opción deseada");
-		int ip = Integer.parseInt(p);
-		
-		Producto productoElegido = menuCompleto.get(ip);
-		
-		if (ip > 3) {
-			String cambiar = input("Desea modificar el producto?\n1. Añadir ingrediente\n2. Quitar ingrediente\n3. No quiero modificarlo");
-			//int icambios = Integer.parseInt(cambios);
-			if ((cambiar == "1") || (cambiar == "2")) {
-				int u = 0;
-				for (Ingrediente ingredienteActual : restaurante.darIngredientes()) {
-					System.out.println(u + ". " + ingredienteActual.daringrediente() + " | Precio: " + ingredienteActual.darPrecio());
-				}
-			}
-			
-		}
-		
-		pedidoActual.añadirProducto(productoElegido);
-		restaurante.actualizarPedidoActual(pedidoActual);	
-		
-		}
 	}
-			
-			
-			
-		
-	
 
 	private void ejecutarIniciarNuevoPedido() {
-		String nombre = input("Ingrese su nombre");
-		String dirección = input("Ingrese su dirección");
-		
-		Pedido nuevoPedido = new Pedido(nombre, dirección);
-		restaurante.añadirPedido(nuevoPedido);
-		System.out.println("Que desea hacer a continuación? ");	
+		String opcion_seleccion = input("Introduzca los numeros de los alimentos que desee pedir y separelos con una coma (Ej: 1,4,6)");
+		String [] partes = opcion_seleccion.split(",");
+		ArrayList<Integer> opcionesSeleccionadas = new ArrayList<Integer>();
+		ArrayList<Producto> productosPedidos = new ArrayList<Producto>();
+		for (String caracter: partes)
+		{
+			int num = Integer.parseInt(caracter);
+			opcionesSeleccionadas.add(num);
 		}
 		
-	
+		
+		ArrayList<ProductoMenu> menu = restaurante.darMenu();
+		ArrayList<Combo> combos = restaurante.darCombos(); 
+		ArrayList<Ingrediente> ingredientes = restaurante.darIngredientes();
+		ArrayList<Producto> combosProductos = new ArrayList<Producto>(combos);
+		combosProductos.addAll(menu);
+		
+		for (int numero: opcionesSeleccionadas) {
+			
+			if ((numero < (combosProductos.size())))
+			{
+				Producto productoPedido = combosProductos.get(numero);
+				
+				if (4 < numero) {
+					String seleccion = input("¿Desea añadirle o quitarle algo al producto?\n1. Añadir\n2. Quitar\n3. No cambiar nada");
+					ProductoMenu dato = menu.get(numero);
+					String nombre = dato.darNombre();
+					double precio = dato.darPrecio();
+					System.out.println(nombre + precio);
+					}
+				
+				productosPedidos.add(productoPedido);
+			}
+			
+			
+			
+		Pedido nuevoPedido = new Pedido(productosPedidos);
+		System.out.println("Que desea hacer a continuación? ");	
+			
+			
+		}
+		
+	}
 
 	/**
 	 * Este método carga los archivos usando la clase Burgers y crea un objeto de tipo

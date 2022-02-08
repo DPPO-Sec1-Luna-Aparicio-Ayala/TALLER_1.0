@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Map;
 
-public class Combo implements Producto
+public class Combo
 {
 	// ************************************************************************
 	// Atributos
@@ -40,32 +40,23 @@ public class Combo implements Producto
 	// ************************************************************************
 	// Métodos para consultar los atributos
 	// ************************************************************************
-	public String darNombre()
+	public String darNombreCombo()
 	{
 		return comboName;
 	}
-	
-	public String darTextoFactura()
-	{
-		return "a";
-	}
-	
 		public double darDescuento()
 	{
 		return descuento;
 	}
-		
 		public ProductoMenu darHamburguesa()
 	{
 		return hamburguesa;
 	}
 	
-		
 	public ProductoMenu darPapas()
 	{
 		return papas;
 	}
-	
 	public ProductoMenu darBebida()
 	{
 		return bebida;

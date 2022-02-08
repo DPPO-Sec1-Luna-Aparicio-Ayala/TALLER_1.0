@@ -1,6 +1,6 @@
 package modelo;
 
-public class ProductoMenu implements Producto {
+public class ProductoMenu {
 	
 	// ************************************************************************
 			// Atributos
@@ -19,7 +19,7 @@ public class ProductoMenu implements Producto {
 	// ************************************************************************
 	// Métodos para consultar los atributos
 	// ************************************************************************
-	public String darNombre()
+	public String darPlato()
 	{
 		return plato;
 	}
@@ -27,11 +27,6 @@ public class ProductoMenu implements Producto {
 	public double darPrecio()
 	{
 		return precio;
-	}
-	
-	public String darTextoFactura()
-	{
-		return "a";
 	}
 
 

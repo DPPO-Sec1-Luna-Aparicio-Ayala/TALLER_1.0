@@ -3,16 +3,13 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductoAlterado implements Producto{
+public class ProductoAlterado {
 	// ***********************************************************************
 	// Atributos
 	// ***********************************************************************
 	private ProductoMenu productoInicial;
 	private ArrayList<Ingrediente> adiciones;
 	private ArrayList<Ingrediente> sustracciones;
-	private String nombre;
-	private double precio;
-	private String textoFactura;
 	
 	
 	
@@ -29,21 +26,4 @@ public class ProductoAlterado implements Producto{
 	// ************************************************************************
 	// Métodos
 	// ************************************************************************
-	
-	public String darNombre()
-	{
-		return nombre;
-	}
-	
-	public double darPrecio()
-	{
-		return precio;
-	}
-
-	public String darTextoFactura() {
-		return textoFactura;
-	}
-
 }
-
-

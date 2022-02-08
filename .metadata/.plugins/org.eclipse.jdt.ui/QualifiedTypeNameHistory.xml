@@ -18,4 +18,6 @@
     <fullyQualifiedTypeName name="loader.Restaurante"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="modelo.Pedido"/>
+    <fullyQualifiedTypeName name="modelo.Producto"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

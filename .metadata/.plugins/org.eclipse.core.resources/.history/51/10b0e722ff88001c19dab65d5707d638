@@ -17,30 +17,34 @@ public class Pedido {
 	// ************************************************************************
 	// Constructor
 	// ************************************************************************
-	public Pedido(String nombre, String direccion)	{
+	public Pedido(ArrayList<Producto> productos)
+	{
 		this.valorNeto = 0;
 		
-		this.nombreCliente = nombre;
-		this.direccionCliente = direccion;
+		for (Combo comboActual : combos)
+		{
+			String nombreCombo = comboActual.darNombre();
+			double precio = comboActual.darPrecio();
+			combos.add(comboActual);
+			this.valorNeto += precio;
+		}
 		
-		this.productosPedido = new ArrayList<Producto>();
-	}
-	
-	public ArrayList<Producto> darProductosActuales(){
-		return productosPedido;
+		for (ProductoMenu productoActual : basicos)
+		{
+			double precio = productoActual.darPrecio();
+			productosBasicos.add(productoActual);
+			this.valorNeto += precio;
+		}
+		
+		for (ProductoAlterado productoActual : modificados)
+		{
+			
+		}
 	}
 	
 	public void asignarID(int numero) {
 		String numId = Integer.toString(numero);
 		this.id = numId;
-	}
-	
-	public void añadirProducto(Producto nuevoProducto) {
-		this.productosPedido.add(nuevoProducto);
-	}
-	
-	public void actualizar(Pedido pedidoActualizado) {
-		this.productosPedido = pedidoActualizado.darProductosActuales();
 	}
 	
 }

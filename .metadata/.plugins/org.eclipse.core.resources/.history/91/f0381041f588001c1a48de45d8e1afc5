@@ -1,0 +1,43 @@
+package modelo; 
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pedido {
+	private String id;
+	private double valorNeto;
+	private double valorTotal;
+	private ArrayList<Combo> combos;
+	private ArrayList<ProductoMenu> productosBasicos;
+	private ArrayList<ProductoAlterado> productosAlterados;
+	private double calorias;
+	
+	// ************************************************************************
+	// Constructor
+	// ************************************************************************
+	public Pedido(String id, ArrayList<Combo> combos, ArrayList<ProductoMenu> basicos, ArrayList<ProductoAlterado> modificados)
+	{
+		this.valorNeto = 0;
+		
+		for (Combo comboActual : combos)
+		{
+			String nombreCombo = comboActual.darNombreCombo();
+			double precio = comboActual.darPrecio();
+			combos.add(comboActual);
+			this.valorNeto += precio;
+		}
+		
+		for (ProductoMenu productoActual : basicos)
+		{
+			double precio = productoActual.darPrecio();
+			productosBasicos.add(productoActual);
+			this.valorNeto += precio;
+		}
+		
+		for (ProductoAlterado productoActual : modificados)
+		{
+			
+		}
+	}
+	
+}

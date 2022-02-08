@@ -9,7 +9,7 @@ public class Ingrediente {
 		private String ingrediente;
 		private double precio;
 		
-		public Ingrediente(String ingre, String price)
+		public Ingrediente(String ingre,String price)
 		{
 			this.ingrediente = ingre;
 			double precioDouble = Double.parseDouble(price);

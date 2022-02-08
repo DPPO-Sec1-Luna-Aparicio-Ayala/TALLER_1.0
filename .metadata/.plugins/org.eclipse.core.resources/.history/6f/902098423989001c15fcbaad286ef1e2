@@ -8,10 +8,11 @@ public class Pedido {
 	private double valorNeto;
 	private double valorTotal;
 	private ArrayList<Producto> productosPedido;
+	//private ArrayList<ProductoMenu> productosBasicos;
+	//private ArrayList<ProductoAlterado> productosAlterados;
 	private double calorias;
 	private String nombreCliente;
 	private String direccionCliente;
-	private String resumen;
 	
 	// ************************************************************************
 	// Constructor
@@ -37,21 +38,9 @@ public class Pedido {
 	public void añadirProducto(Producto nuevoProducto) {
 		this.productosPedido.add(nuevoProducto);
 	}
-		
-	public void finalizarPedido() {
-		String productosTexto = "";
-		for(Producto productoActual : productosPedido) {
-			double valor = productoActual.darPrecio();
-			this.valorNeto += valor;
-			productosTexto.concat(productoActual.darTextoFactura() + "\n");
-		}
-		this.valorTotal = valorNeto * 1.19;
-		
-		resumen = "RESUMEN DEL PEDIDO\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + "\nPRODUCTOS:\n" + productosTexto + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal;
-	}
 	
-	public String darResumen() {
-		return resumen;
+	public void actualizar(Pedido pedidoActualizado) {
+		this.productosPedido = pedidoActualizado.darProductosActuales();
 	}
 	
 }

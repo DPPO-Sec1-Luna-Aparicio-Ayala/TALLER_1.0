@@ -58,7 +58,7 @@ public class Restaurante {
 		
 		public Pedido darPedidoActual(){
 			if (pedidos.size() > 0) {
-				return pedidoEnCurso;
+				return pedidos.get(pedidos.size()-1);
 			}
 			
 			else {
@@ -68,14 +68,8 @@ public class Restaurante {
 		
 		public void actualizarPedidoActual(Pedido pedido) {
 			this.pedidoEnCurso = pedido;
-			pedidos.set(pedidos.size()-1, pedido);
+			pedidos.get(pedidos.size()-1).actualizar(pedido);
 			
-		}
-		
-		public void finalizarPedidoActual() {
-			this.pedidoEnCurso.finalizarPedido();
-			pedidos.set(pedidos.size()-1, pedidoEnCurso);
-			this.pedidoEnCurso = null;
 		}
 
 	}

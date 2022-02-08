@@ -14,7 +14,6 @@ public class Combo implements Producto
 	private ProductoMenu papas;
 	private ProductoMenu bebida;
 	private double precio;
-	private String textoFactura;
 	
 	
 	// ************************************************************************
@@ -34,7 +33,7 @@ public class Combo implements Producto
 		this.bebida= menuProductos.get(soda);
 		double precio = hamburguesa.darPrecio() + papas.darPrecio() + bebida.darPrecio();
 		this.precio = precio - (precio * descuento);
-		this.textoFactura = comboName + " | $" + precio;
+		
 		
 	}
 		
@@ -51,12 +50,12 @@ public class Combo implements Producto
 		return "a";
 	}
 	
-	public double darDescuento()
+		public double darDescuento()
 	{
 		return descuento;
 	}
 		
-	public ProductoMenu darHamburguesa()
+		public ProductoMenu darHamburguesa()
 	{
 		return hamburguesa;
 	}

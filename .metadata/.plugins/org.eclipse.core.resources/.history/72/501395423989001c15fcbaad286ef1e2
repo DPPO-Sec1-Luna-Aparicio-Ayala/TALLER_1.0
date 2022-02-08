@@ -16,7 +16,6 @@ import modelo.Combo;
 import modelo.Ingrediente;
 import modelo.Pedido;
 import modelo.Producto;
-import modelo.ProductoAlterado;
 import modelo.ProductoMenu;
 
 
@@ -40,16 +39,14 @@ public class Aplicacion
 				if (opcion_seleccionada == 1)
 					ejecutarCargarMenu();
 				else if (opcion_seleccionada == 2 && restaurante != null)
-					mostrarMenu();
-				else if (opcion_seleccionada == 3 && restaurante != null)
 					ejecutarIniciarNuevoPedido();
-				else if (opcion_seleccionada == 4 && restaurante != null)
+				else if (opcion_seleccionada == 3 && restaurante != null)
 					ejecutarAdicionarAlPedido();
-				else if (opcion_seleccionada == 5 && restaurante != null)
+				else if (opcion_seleccionada == 4 && restaurante != null)
 					ejecutarCerrarPedido();
-				else if (opcion_seleccionada == 6 && restaurante != null)
+				else if (opcion_seleccionada == 5 && restaurante != null)
 					ejecutarConsultarPedido();
-				else if (opcion_seleccionada == 7)
+				else if (opcion_seleccionada == 6)
 				{
 					System.out.println("Saliendo de la aplicaciÃ³n ...");
 					continuar = false;
@@ -73,32 +70,23 @@ public class Aplicacion
 	public void mostrarMenuu()
 	{
 		System.out.println("\nOpciones de la aplicaciÃ³n\n");
-		System.out.println("1. Cargar menú restaurante");
-		System.out.println("2. Mostrar menú");
-		System.out.println("3. Iniciar un nuevo pedido");
-		System.out.println("4. Agregar un elemento a un pedido");
-		System.out.println("5. Cerrar un pedido y guardar factura");
-		System.out.println("6. Consultar la información de un pedido dado su ID");
-		System.out.println("7. Salir de la aplicación"); 
+		System.out.println("1. Mostrar menú restaurante");
+		System.out.println("2. Iniciar un nuevo pedido");
+		System.out.println("3. Agregar un elemento a un pedido");
+		System.out.println("4. Cerrar un pedido y guardar factura");
+		System.out.println("5. Consultar la información de un pedido dado su ID");
+		System.out.println("6. Salir de la aplicación"); 
 	}
 	
 	
 
 	private void ejecutarConsultarPedido() {
-		String num = input("Ingrese el ID del pedido a consultar");
-		num.replace(" ", "");
-		int inum = Integer.parseInt(num);
-		Pedido pedidoConsultado = restaurante.darPedidos().get(inum-1);
-		System.out.println(pedidoConsultado.darResumen());
+		// TODO Auto-generated method stub
 		
 	}
 
 	private void ejecutarCerrarPedido() {
-		Pedido pedidoActual = restaurante.darPedidoActual();
-		if (pedidoActual != null) {
-			restaurante.finalizarPedidoActual();
-			System.out.println(restaurante.darPedidos().get(restaurante.darPedidos().size()-1).darResumen());
-		}
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -110,7 +98,6 @@ public class Aplicacion
 			menuCompleto.addAll(restaurante.darMenu());
 			int w = 0;
 			for (Producto productoActual : menuCompleto) {
-				System.out.println("\n");
 				System.out.println(w + ". " + productoActual.darNombre() + " | Precio: " + productoActual.darPrecio());
 				w ++;
 			}
@@ -120,57 +107,26 @@ public class Aplicacion
 		Producto productoElegido = menuCompleto.get(ip);
 		
 		if (ip > 3) {
-			String cambiar = input("Desea modificar el producto?\n1. Añadir ingrediente\n2. Quitar ingrediente\n3. No quiero modificarlo\n");
-			
+			String cambiar = input("Desea modificar el producto?\n1. Añadir ingrediente\n2. Quitar ingrediente\n3. No quiero modificarlo");
+			//int icambios = Integer.parseInt(cambios);
 			if ((cambiar == "1") || (cambiar == "2")) {
-					Producto alterado = alterarProducto(productoElegido, cambiar);
-					pedidoActual.añadirProducto(alterado);
-					restaurante.actualizarPedidoActual(pedidoActual);				
-			}
-			else {
-				pedidoActual.añadirProducto(productoElegido);
-				restaurante.actualizarPedidoActual(pedidoActual);
+				int u = 0;
+				for (Ingrediente ingredienteActual : restaurante.darIngredientes()) {
+					System.out.println(u + ". " + ingredienteActual.daringrediente() + " | Precio: " + ingredienteActual.darPrecio());
+				}
 			}
 			
 		}
 		
+		pedidoActual.añadirProducto(productoElegido);
+		restaurante.actualizarPedidoActual(pedidoActual);	
+		
 		}
 	}
-	
 			
-	private Producto alterarProducto(Producto producto, String alteracion) {
-		int u = 0;
-		for (Ingrediente ingredienteActual : restaurante.darIngredientes()) {
-			System.out.println(u + ". " + ingredienteActual.daringrediente() + " | Precio: " + ingredienteActual.darPrecio());			
-		}
-		ArrayList<Ingrediente> adiciones = new ArrayList<Ingrediente>();
-		ArrayList<Ingrediente> sustracciones = new ArrayList<Ingrediente>();
+			
+			
 		
-		if (alteracion == "1") {
-			String eleccion = input("Ingrese el número del ingrediente que desea añadir");
-			int ieleccion = Integer.parseInt(eleccion);
-			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion);
-			adiciones.add(ingredienteElegido);
-		}
-		if (alteracion == "2") {
-			String eleccion = input("Ingrese el número del ingrediente que desea añadir");
-			int ieleccion = Integer.parseInt(eleccion);
-			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion);
-			sustracciones.add(ingredienteElegido);
-			}
-		
-		Producto productoAlterado = new ProductoAlterado(producto, adiciones, sustracciones);
-		
-		String seguir = input("Desea seguir modificando el producto?\n1. Agregar otro ingrediente\n2. Eliminar otro ingrediente\n3. Terminar modificaciones");
-		if ((seguir == "1") || (seguir == "2")) {
-			return alterarProducto(productoAlterado, seguir);
-		}
-		else {
-			return productoAlterado;
-		}
-		
-	}
-	
 	
 
 	private void ejecutarIniciarNuevoPedido() {
@@ -199,7 +155,30 @@ public class Aplicacion
 		try
 		{
 			this.restaurante = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
-			System.out.println("Se cargaron los archivos " + archivo1 + archivo2 + archivo3 + " con información del menú.");	
+			System.out.println("Se cargaron los archivos " + archivo1 + archivo2 + archivo3 + " con información del menú.");
+			ArrayList<Combo> combos = restaurante.darCombos();
+			
+			System.out.println("\nCOMBOS");
+			int n = 0;
+			for (Combo comboActual: combos) {
+				n ++;
+				String nombre = comboActual.darNombre();
+				double precio = comboActual.darPrecio();
+				System.out.println(n + ". " + nombre + " Precio: " + precio);
+			}
+				
+			System.out.println("\nPRODUCTOS BÁSICOS");
+			ArrayList<ProductoMenu> menu = restaurante.darMenu();
+			
+			for (ProductoMenu productoActual : menu) {
+				n ++;
+				String nombre = productoActual.darNombre();
+				double precio = productoActual.darPrecio();
+			    System.out.println(n + ". " + nombre + " Precio: " + precio);
+			}
+		
+
+			
 		}
 		catch (FileNotFoundException e)
 		{
@@ -229,26 +208,7 @@ public class Aplicacion
 	}
 
 	private void mostrarMenu() {
-		ArrayList<Combo> combos = restaurante.darCombos();
-		
-		System.out.println("\nCOMBOS");
-		int n = 0;
-		for (Combo comboActual: combos) {
-			n ++;
-			String nombre = comboActual.darNombre();
-			double precio = comboActual.darPrecio();
-			System.out.println(n + ". " + nombre + " | $" + precio);
-		}
-			
-		System.out.println("\nPRODUCTOS BÁSICOS");
-		ArrayList<ProductoMenu> menu = restaurante.darMenu();
-		
-		for (ProductoMenu productoActual : menu) {
-			n ++;
-			String nombre = productoActual.darNombre();
-			double precio = productoActual.darPrecio();
-		    System.out.println(n + ". " + nombre + " | $" + precio);
-		}
+		// TODO Auto-generated method stub
 	}
 	
 	public static void main(String[] args)

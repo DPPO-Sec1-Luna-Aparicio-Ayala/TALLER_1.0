@@ -110,7 +110,6 @@ public class Aplicacion
 			menuCompleto.addAll(restaurante.darMenu());
 			int w = 0;
 			for (Producto productoActual : menuCompleto) {
-				System.out.println("\n");
 				System.out.println(w + ". " + productoActual.darNombre() + " | Precio: " + productoActual.darPrecio());
 				w ++;
 			}
@@ -120,7 +119,7 @@ public class Aplicacion
 		Producto productoElegido = menuCompleto.get(ip);
 		
 		if (ip > 3) {
-			String cambiar = input("Desea modificar el producto?\n1. Añadir ingrediente\n2. Quitar ingrediente\n3. No quiero modificarlo\n");
+			String cambiar = input("Desea modificar el producto?\n1. Añadir ingrediente\n2. Quitar ingrediente\n3. No quiero modificarlo");
 			
 			if ((cambiar == "1") || (cambiar == "2")) {
 					Producto alterado = alterarProducto(productoElegido, cambiar);

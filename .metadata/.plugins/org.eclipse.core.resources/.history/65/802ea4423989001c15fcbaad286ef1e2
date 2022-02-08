@@ -8,14 +8,12 @@ public class ProductoMenu implements Producto {
 
 			private String plato;
 			private double precio;
-			private String textoFactura;
 
 	public ProductoMenu(String plate, String price) 
 	{
 		this.plato =plate;
 		double precioDouble = Double.parseDouble(price);
 		this.precio = precioDouble;
-		this.textoFactura = plato + " | $" + precio;
 	}
 	
 	// ************************************************************************

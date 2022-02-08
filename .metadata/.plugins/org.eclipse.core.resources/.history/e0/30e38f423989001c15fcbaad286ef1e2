@@ -7,7 +7,7 @@ public class ProductoAlterado implements Producto{
 	// ***********************************************************************
 	// Atributos
 	// ***********************************************************************
-	private Producto productoInicial;
+	private ProductoMenu productoInicial;
 	private ArrayList<Ingrediente> adiciones;
 	private ArrayList<Ingrediente> sustracciones;
 	private String nombre;
@@ -19,31 +19,11 @@ public class ProductoAlterado implements Producto{
 	// ************************************************************************
 	// Constructor
 	// ************************************************************************
-	public ProductoAlterado(Producto basico, ArrayList<Ingrediente> extra, ArrayList<Ingrediente> menos)
+	public ProductoAlterado(ProductoMenu basico, ArrayList<Ingrediente> extra, ArrayList<Ingrediente> menos)
 	{
 		this.productoInicial = basico;
 		this.adiciones = extra;
 		this.sustracciones = menos;
-		String nombreCompleto = productoInicial.darNombre();
-		for (Ingrediente ingrediente : adiciones) {
-			String nombreIng = ingrediente.daringrediente();
-			nombreCompleto.concat(" con adición de " + nombreIng);	
-		}
-		
-		for (Ingrediente ingrediente : sustracciones) {
-			String nombreIng = ingrediente.daringrediente();
-			nombreCompleto.concat(" sin " + nombreIng);
-		}
-		
-		this.nombre = nombreCompleto;
-		
-		double precioAdiciones = 0;
-		for(Ingrediente adicion : extra) {
-			precioAdiciones += adicion.darPrecio();
-		}
-		this.precio = basico.darPrecio() + precioAdiciones;
-		
-		this.textoFactura = nombre + " | $" + precio;
 	}
 
 	// ************************************************************************

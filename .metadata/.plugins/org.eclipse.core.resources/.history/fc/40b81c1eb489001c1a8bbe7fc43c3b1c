@@ -48,7 +48,7 @@ public class Combo implements Producto
 	
 	public String darTextoFactura()
 	{
-		return textoFactura;
+		return "a";
 	}
 	
 	public double darDescuento()

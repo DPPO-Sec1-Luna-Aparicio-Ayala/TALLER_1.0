@@ -44,7 +44,7 @@ public class Pedido {
 			double valor = productoActual.darPrecio();
 			this.valorNeto += valor;
 			//productosTexto.concat(productoActual.darTextoFactura() + "\n");
-			productosTexto += "-" + productoActual.darTextoFactura() + "\n";
+			productosTexto += productoActual.darTextoFactura() + "\n";
 		}
 		this.valorTotal = this.valorNeto * 1.19;
 		

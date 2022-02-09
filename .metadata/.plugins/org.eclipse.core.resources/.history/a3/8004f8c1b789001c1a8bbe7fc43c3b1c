@@ -145,9 +145,6 @@ public class Aplicacion
 		}
 		
 		}
-		else {
-			System.out.println("Todavía no se ha iniciado un pedido.");
-		}
 	}
 	
 			
@@ -167,9 +164,9 @@ public class Aplicacion
 			adiciones.add(ingredienteElegido);
 		}
 		if (alteracion == 2) {
-			String eleccion = input("Ingrese el número del ingrediente que desea quitar");
+			String eleccion = input("Ingrese el número del ingrediente que desea añadir");
 			int ieleccion = Integer.parseInt(eleccion);
-			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion-1);
+			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion);
 			sustracciones.add(ingredienteElegido);
 			}
 		

@@ -43,12 +43,11 @@ public class Pedido {
 		for(Producto productoActual : productosPedido) {
 			double valor = productoActual.darPrecio();
 			this.valorNeto += valor;
-			//productosTexto.concat(productoActual.darTextoFactura() + "\n");
-			productosTexto += "-" + productoActual.darTextoFactura() + "\n";
+			productosTexto.concat(productoActual.darTextoFactura() + "\n");
 		}
-		this.valorTotal = this.valorNeto * 1.19;
+		this.valorTotal = valorNeto * 1.19;
 		
-		resumen = "RESUMEN DEL PEDIDO\n" + "ID: " + id + "\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + "\nPRODUCTOS:\n" + productosTexto + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal;
+		resumen = "RESUMEN DEL PEDIDO\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + "\nPRODUCTOS:\n" + productosTexto + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal;
 	}
 	
 	public String darResumen() {

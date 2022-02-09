@@ -27,12 +27,12 @@ public class ProductoAlterado implements Producto{
 		String nombreCompleto = productoInicial.darNombre();
 		for (Ingrediente ingrediente : adiciones) {
 			String nombreIng = ingrediente.daringrediente();
-			nombreCompleto += " con adición de " + nombreIng;	
+			nombreCompleto.concat(" con adición de " + nombreIng);	
 		}
 		
 		for (Ingrediente ingrediente : sustracciones) {
 			String nombreIng = ingrediente.daringrediente();
-			nombreCompleto += " sin " + nombreIng;
+			nombreCompleto.concat(" sin " + nombreIng);
 		}
 		
 		this.nombre = nombreCompleto;

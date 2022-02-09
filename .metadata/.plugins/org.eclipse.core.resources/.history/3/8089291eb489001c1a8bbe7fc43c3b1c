@@ -33,7 +33,7 @@ public class ProductoMenu implements Producto {
 	
 	public String darTextoFactura()
 	{
-		return textoFactura;
+		return "a";
 	}
 
 

@@ -113,7 +113,7 @@ public class Aplicacion
 		if (pedidoActual != null) {
 			ArrayList<Producto> menuCompleto = new ArrayList<Producto>(restaurante.darCombos());
 			menuCompleto.addAll(restaurante.darMenu());
-			int w = 1;
+			int w = 0;
 			System.out.println("\n");
 			for (Producto productoActual : menuCompleto) {
 				System.out.println(w + ". " + productoActual.darNombre() + " | " + productoActual.darPrecio());
@@ -122,7 +122,7 @@ public class Aplicacion
 		String p = input("Por favor ingrese el número de la opción deseada");
 		int ip = Integer.parseInt(p);
 		
-		Producto productoElegido = menuCompleto.get(ip-1);
+		Producto productoElegido = menuCompleto.get(ip);
 		
 		if (ip > 3) {
 			String cambiar = input("Desea modificar el producto?\n1. Añadir ingrediente\n2. Quitar ingrediente\n3. No quiero modificarlo\n");
@@ -145,14 +145,11 @@ public class Aplicacion
 		}
 		
 		}
-		else {
-			System.out.println("Todavía no se ha iniciado un pedido.");
-		}
 	}
 	
 			
 	private Producto alterarProducto(Producto producto, int alteracion) {
-		int u = 1;
+		int u = 0;
 		for (Ingrediente ingredienteActual : restaurante.darIngredientes()) {
 			System.out.println(u + ". " + ingredienteActual.daringrediente() + " | " + ingredienteActual.darPrecio());	
 			u ++;
@@ -163,13 +160,13 @@ public class Aplicacion
 		if (alteracion == 1) {
 			String eleccion = input("Ingrese el número del ingrediente que desea añadir");
 			int ieleccion = Integer.parseInt(eleccion);
-			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion-1);
+			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion);
 			adiciones.add(ingredienteElegido);
 		}
 		if (alteracion == 2) {
-			String eleccion = input("Ingrese el número del ingrediente que desea quitar");
+			String eleccion = input("Ingrese el número del ingrediente que desea añadir");
 			int ieleccion = Integer.parseInt(eleccion);
-			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion-1);
+			Ingrediente ingredienteElegido = restaurante.darIngredientes().get(ieleccion);
 			sustracciones.add(ingredienteElegido);
 			}
 		

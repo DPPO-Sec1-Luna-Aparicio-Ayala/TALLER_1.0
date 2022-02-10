@@ -101,7 +101,6 @@ public class Aplicacion
 	private void ejecutarCerrarPedido() {
 		Pedido pedidoActual = restaurante.darPedidoActual();
 		if (pedidoActual != null) {
-			pedidoActual.guardarFactura(String[]);
 			restaurante.finalizarPedidoActual();
 			System.out.println(restaurante.darPedidos().get(restaurante.darPedidos().size()-1).darResumen());
 		}
@@ -193,7 +192,6 @@ public class Aplicacion
 	
 
 	private void ejecutarIniciarNuevoPedido() {
-		if (restaurante.darPedidoActual() == null) {
 		String nombre = input("Ingrese su nombre");
 		String dirección = input("Ingrese su dirección");
 		
@@ -201,11 +199,6 @@ public class Aplicacion
 		restaurante.añadirPedido(nuevoPedido);
 		System.out.println("Que desea hacer a continuación? ");	
 		}
-	
-	else {
-		System.out.println("Primero finalice el pedido en curso");
-	}
-	}
 		
 	
 

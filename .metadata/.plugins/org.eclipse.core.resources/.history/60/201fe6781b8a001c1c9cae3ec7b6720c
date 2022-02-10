@@ -101,7 +101,6 @@ public class Aplicacion
 	private void ejecutarCerrarPedido() {
 		Pedido pedidoActual = restaurante.darPedidoActual();
 		if (pedidoActual != null) {
-			pedidoActual.guardarFactura(String[]);
 			restaurante.finalizarPedidoActual();
 			System.out.println(restaurante.darPedidos().get(restaurante.darPedidos().size()-1).darResumen());
 		}

@@ -32,11 +32,8 @@ public class Combo implements Producto
 		this.hamburguesa = menuProductos.get(ham);
 		this.papas = menuProductos.get(papitas);
 		this.bebida= menuProductos.get(soda);
-		double precio1 = hamburguesa.darPrecio()* descuento;
-		double precio2 = papas.darPrecio()* descuento;
-		double precio3 =bebida.darPrecio()* descuento;
-		double preciof= precio1 +precio2 + precio3;
-		this.precio = preciof;
+		double precio = hamburguesa.darPrecio() + papas.darPrecio() + bebida.darPrecio();
+		this.precio = precio - (precio * descuento);
 		this.textoFactura = comboName + " | $" + precio;
 		
 	}

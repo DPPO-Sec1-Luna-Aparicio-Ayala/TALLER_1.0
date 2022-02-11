@@ -56,7 +56,7 @@ public class Aplicacion
 				}
 				else if (restaurante == null)
 				{
-					System.out.println("Para poder ejecutar esta opción primero debe cargar los archivos.");
+					System.out.println("Para poder ejecutar esta opción primero debe cargar un archivo de atletas.");
 				}
 				else
 				{
@@ -74,7 +74,7 @@ public class Aplicacion
 	{
 		System.out.println("\nOpciones de la aplicación\n");
 		System.out.println("1. Cargar menú restaurante");
-		System.out.println("2. Mostrar menú");
+		System.out.println("2. Mostrar me6nú");
 		System.out.println("3. Iniciar un nuevo pedido");
 		System.out.println("4. Agregar un elemento a un pedido");
 		System.out.println("5. Cerrar un pedido y guardar factura");

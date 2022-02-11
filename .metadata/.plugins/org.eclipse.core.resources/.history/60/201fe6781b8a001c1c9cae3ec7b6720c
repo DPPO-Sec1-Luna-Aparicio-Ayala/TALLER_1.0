@@ -56,7 +56,7 @@ public class Aplicacion
 				}
 				else if (restaurante == null)
 				{
-					System.out.println("Para poder ejecutar esta opción primero debe cargar los archivos.");
+					System.out.println("Para poder ejecutar esta opción primero debe cargar un archivo de atletas.");
 				}
 				else
 				{
@@ -101,7 +101,6 @@ public class Aplicacion
 	private void ejecutarCerrarPedido() {
 		Pedido pedidoActual = restaurante.darPedidoActual();
 		if (pedidoActual != null) {
-			pedidoActual.guardarFactura(String[]);
 			restaurante.finalizarPedidoActual();
 			System.out.println(restaurante.darPedidos().get(restaurante.darPedidos().size()-1).darResumen());
 		}

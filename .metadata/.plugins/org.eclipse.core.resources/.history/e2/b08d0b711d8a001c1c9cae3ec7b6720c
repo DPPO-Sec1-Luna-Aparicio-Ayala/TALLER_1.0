@@ -58,11 +58,11 @@ public class Pedido {
 		return resumen;
 	}
 	
-	public static void guardarFactura(String[] args) throws IOException {
+	public void guardarFactura() throws IOException {
         BufferedWriter bufferedWriter = null;
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter("targetFile"));
-            bufferedWriter.write("Hey! Content to write in File");
+            bufferedWriter = new BufferedWriter(new FileWriter(id));
+            bufferedWriter.write(resumen);
             
         } catch (IOException e) {
             System.out.println("Exception occurred: " + e.getMessage());

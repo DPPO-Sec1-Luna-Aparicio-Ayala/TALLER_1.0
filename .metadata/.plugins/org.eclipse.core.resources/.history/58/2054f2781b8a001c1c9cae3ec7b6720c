@@ -1,8 +1,5 @@
 package modelo; 
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,20 +54,5 @@ public class Pedido {
 	public String darResumen() {
 		return resumen;
 	}
-	
-	public static void guardarFactura(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = null;
-        try {
-            bufferedWriter = new BufferedWriter(new FileWriter("targetFile"));
-            bufferedWriter.write("Hey! Content to write in File");
-            
-        } catch (IOException e) {
-            System.out.println("Exception occurred: " + e.getMessage());
-
-        } finally {
-            if (bufferedWriter != null)
-                bufferedWriter.close();
-        }
-    }
 	
 }

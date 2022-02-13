@@ -1,0 +1,11 @@
+RESUMEN DEL PEDIDO
+ID: 1
+
+CLIENTE: caaa
+DIRECCIÓN: miii
+
+PRODUCTOS:
+-especial con adición de lechuga | $25000.0
+
+VALOR NETO: $25000.0
+VALOR TOTAL: $29750.0

@@ -3,6 +3,7 @@ package modelo;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class Pedido {
 		this.productosPedido.add(nuevoProducto);
 	}
 		
-	public void finalizarPedido() {
+	public void finalizarPedido() throws IOException {
 		String productosTexto = "";
 		for(Producto productoActual : productosPedido) {
 			double valor = productoActual.darPrecio();
@@ -52,25 +53,27 @@ public class Pedido {
 		this.valorTotal = this.valorNeto * 1.19;
 		
 		this.resumen = "RESUMEN DEL PEDIDO\n" + "ID: " + id + "\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + "\nPRODUCTOS:\n" + productosTexto + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal;
+		String separadocomas = "RESUMEN DEL PEDIDO\n" + "ID: " + id + ";" + "\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + ";" + "\nPRODUCTOS:\n" + productosTexto + ";" + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal;
+		String[] impresionFactura= separadocomas.split(";");
+		PrintWriter pedido = new PrintWriter("pedido"+ id + ".txt", "UTF-8");
+		BufferedWriter bw = new BufferedWriter(pedido);
+        for (int x=0; x<4;x++ ) {
+        	bw.write(impresionFactura[x]);
+        	bw.newLine();
+        	
+        }
+        bw.close();
 	}
+	
 	
 	public String darResumen() {
 		return resumen;
 	}
 	
-	public static void guardarFactura(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = null;
-        try {
-            bufferedWriter = new BufferedWriter(new FileWriter("targetFile"));
-            bufferedWriter.write("Hey! Content to write in File");
-            
-        } catch (IOException e) {
-            System.out.println("Exception occurred: " + e.getMessage());
-
-        } finally {
-            if (bufferedWriter != null)
-                bufferedWriter.close();
-        }
+	/*public static void guardarFactura(String[] args) throws IOException {
+		
+        
     }
+    */
 	
 }

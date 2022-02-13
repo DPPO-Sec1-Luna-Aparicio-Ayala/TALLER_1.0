@@ -114,6 +114,7 @@ public class Aplicacion
 		if (pedidoActual != null) {
 			ArrayList<Producto> menuCompleto = new ArrayList<Producto>(restaurante.darCombos());
 			menuCompleto.addAll(restaurante.darMenu());
+			menuCompleto.addAll(restaurante.darBebidas());
 			int w = 1;
 			System.out.println("\n");
 			for (Producto productoActual : menuCompleto) {

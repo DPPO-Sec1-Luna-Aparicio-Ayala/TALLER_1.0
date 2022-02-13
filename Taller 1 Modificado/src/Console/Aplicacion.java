@@ -106,6 +106,8 @@ public class Aplicacion
 			System.out.println(restaurante.darPedidos().get(restaurante.darPedidos().size()-1).darResumen());
 		}
 		
+		ArrayList Historial = Pedido.darHistorial();
+		
 	}
 
 	private void ejecutarAdicionarAlPedido() {

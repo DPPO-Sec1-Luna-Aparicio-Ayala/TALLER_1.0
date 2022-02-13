@@ -12,6 +12,7 @@ public class Pedido {
 	private String nombreCliente;
 	private String direccionCliente;
 	private String resumen;
+	private ArrayList<String> pedidosHistorial;
 	
 	// ************************************************************************
 	// Constructor
@@ -23,6 +24,7 @@ public class Pedido {
 		this.direccionCliente = direccion;
 		
 		this.productosPedido = new ArrayList<Producto>();
+		this.pedidosHistorial = new ArrayList<String>();
 	}
 	
 	public ArrayList<Producto> darProductosActuales(){
@@ -52,10 +54,33 @@ public class Pedido {
 		
 		resumen = "RESUMEN DEL PEDIDO\n" + "ID: " + id + "\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + "\nPRODUCTOS:\n" + productosTexto + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal + "\nCALORÍAS: "
 				+ cal;
+		
+		pedidosHistorial.add(resumen);
+		System.out.println(pedidosHistorial);
 	}
 	
 	public String darResumen() {
 		return resumen;
 	}
 	
+	public ArrayList<String> darHistorial() {
+		return pedidosHistorial;
+	}
+	
+	// Código que añadimos a la clase Pedido. Sobreescritura del método equals ejemplo
+
+    public boolean equals (Object obj) {
+
+        if (obj instanceof Pedido) {
+
+        Pedido tmbPedido = (Pedido) obj;
+
+            if (this.resumen.equals(tmbPedido.resumen)) //&& this.apellidos.equals(tmpPersona.apellidos) &&
+
+// this.edad == tmpPersona.edad) 
+            	{ return true; } else { return false; }
+
+    } else { return false; }
+
+} //Cierre del método equals
 }

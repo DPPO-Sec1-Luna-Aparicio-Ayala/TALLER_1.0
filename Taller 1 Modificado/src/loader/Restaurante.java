@@ -1,4 +1,5 @@
 package loader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -80,10 +81,11 @@ public class Restaurante {
 			
 		}
 		
-		public void finalizarPedidoActual() {
+		public void finalizarPedidoActual() throws IOException {
 			this.pedidoEnCurso.finalizarPedido();
 			pedidos.set(pedidos.size()-1, pedidoEnCurso);
 			this.pedidoEnCurso = null;
 		}
+		
 
 	}

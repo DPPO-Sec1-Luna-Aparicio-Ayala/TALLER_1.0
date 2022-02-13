@@ -27,7 +27,7 @@ public class Aplicacion
 	private Restaurante restaurante;
 	
 
-	public void ejecutarAplicacion()
+	public void ejecutarAplicacion() throws IOException
 	{
 		System.out.println("Restaurante \n");
 
@@ -99,14 +99,14 @@ public class Aplicacion
 		
 	}
 
-	private void ejecutarCerrarPedido() {
+	private void ejecutarCerrarPedido() throws IOException {
 		Pedido pedidoActual = restaurante.darPedidoActual();
 		if (pedidoActual != null) {
 			restaurante.finalizarPedidoActual();
 			System.out.println(restaurante.darPedidos().get(restaurante.darPedidos().size()-1).darResumen());
 		}
 		
-		ArrayList Historial = Pedido.darHistorial();
+		
 		
 	}
 
@@ -282,7 +282,7 @@ public class Aplicacion
 		}
 	}
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	
 	{
 		Aplicacion consola = new Aplicacion();

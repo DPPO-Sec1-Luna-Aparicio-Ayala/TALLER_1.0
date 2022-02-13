@@ -1,0 +1,12 @@
+RESUMEN DEL PEDIDO
+ID: 1
+
+CLIENTE: SAn
+DIRECCIÓN: Tia
+
+PRODUCTOS:
+-papas en casco medianas | $5500.0 | cals.132
+
+VALOR NETO: $5500.0
+VALOR TOTAL: $6545.0
+CALORÍAS: 132.0

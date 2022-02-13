@@ -16,6 +16,7 @@ public class Pedido {
 	private String nombreCliente;
 	private String direccionCliente;
 	private String resumen;
+	private String resumenBueno;
 	
 	// ************************************************************************
 	// Constructor
@@ -53,6 +54,7 @@ public class Pedido {
 		this.valorTotal = this.valorNeto * 1.19;
 		
 		this.resumen = "RESUMEN DEL PEDIDO\n" + "ID: " + id + "\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + "\nPRODUCTOS:\n" + productosTexto + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal;
+		this.resumenBueno = "RESUMEN DEL PEDIDO\n" + "\nPRODUCTOS:\n" + productosTexto + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal; 
 		String separadocomas = "RESUMEN DEL PEDIDO\n" + "ID: " + id + ";" + "\nCLIENTE: " + nombreCliente + "\nDIRECCIÓN: " + direccionCliente + ";" + "\nPRODUCTOS:\n" + productosTexto + ";" + "VALOR NETO: $" + valorNeto + "\nVALOR TOTAL: $" + valorTotal;
 		String[] impresionFactura= separadocomas.split(";");
 		PrintWriter pedido = new PrintWriter("pedido"+ id + ".txt", "UTF-8");

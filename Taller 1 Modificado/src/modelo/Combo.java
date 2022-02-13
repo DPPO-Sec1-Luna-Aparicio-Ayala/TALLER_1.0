@@ -12,7 +12,7 @@ public class Combo implements Producto
 	private double descuento;
 	private ProductoMenu hamburguesa;
 	private ProductoMenu papas;
-	private ProductoMenu bebida;
+	private Bebidas bebida;
 	private double precio;
 	private String textoFactura;
 	private double cal;
@@ -22,7 +22,7 @@ public class Combo implements Producto
 	// Constructores
 	// ************************************************************************
 
-	public Combo(String combo, String desc, String ham,String papitas,String soda,String cal, Map<String, ProductoMenu> menuProductos)
+	public Combo(String combo, String desc, String ham,String papitas,String soda,String cal, Map<String, ProductoMenu> menuProductos, Map<String, Bebidas> menuBebidas)
 	{
 		String descSinPorc = desc.replace("%", "");
 		double descDouble = Double.parseDouble(descSinPorc);
@@ -33,7 +33,7 @@ public class Combo implements Producto
 		this.descuento = descDecimal;
 		this.hamburguesa = menuProductos.get(ham);
 		this.papas = menuProductos.get(papitas);
-		this.bebida= menuProductos.get(soda);
+		this.bebida= menuBebidas.get(soda);
 		double precio1 = hamburguesa.darPrecio()* descuento;
 		double precio2 = papas.darPrecio()* descuento;
 		double precio3 =bebida.darPrecio()* descuento;
@@ -73,7 +73,7 @@ public class Combo implements Producto
 		return papas;
 	}
 	
-	public ProductoMenu darBebida()
+	public Bebidas darBebida()
 	{
 		return bebida;
 	}		

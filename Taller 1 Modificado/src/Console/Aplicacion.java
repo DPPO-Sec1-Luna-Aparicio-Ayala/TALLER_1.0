@@ -18,6 +18,7 @@ import modelo.Pedido;
 import modelo.Producto;
 import modelo.ProductoAlterado;
 import modelo.ProductoMenu;
+import modelo.Bebidas;
 
 
 public class Aplicacion
@@ -211,10 +212,11 @@ public class Aplicacion
 		String archivo1 = "./data/combos.txt";
 		String archivo2 = "./data/ingredientes.txt";
 		String archivo3 = "./data/menu.txt";
+		String archivo4 = "./data/bebidas.txt";
 		try
 		{
-			this.restaurante = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3);
-			System.out.println("Se cargaron los archivos " + archivo1 + ", " + archivo2 + ", " + archivo3 + " con información del menú.");	
+			this.restaurante = LoaderBurgers.cargarArchivo(archivo1, archivo2, archivo3, archivo4);
+			System.out.println("Se cargaron los archivos " + archivo1 + ", " + archivo2 + ", " + archivo3 + ", " + archivo4 + " con información del menú.");	
 		}
 		catch (FileNotFoundException e)
 		{
@@ -263,6 +265,17 @@ public class Aplicacion
 			String nombre = productoActual.darNombre();
 			double precio = productoActual.darPrecio();
 		    System.out.println(n + ". " + nombre + " | $" + precio);
+		}
+		
+		System.out.println("\nBEBIDAS");
+		ArrayList<Bebidas> bebida = restaurante.darBebidas();
+		
+		for (Bebidas productoActual : bebida) {
+			n ++;
+			String nombre = productoActual.darNombre();
+			double precio = productoActual.darPrecio();
+		    System.out.println(n + ". " + nombre + " | $" + precio);
+		    
 		}
 	}
 	

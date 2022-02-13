@@ -15,7 +15,7 @@ import modelo.ProductoMenu;
 public class LoaderBurgers
 {
 
-	public static Restaurante cargarArchivo(String archivo1, String archivo2,String archivo3) throws FileNotFoundException, IOException
+	public static Restaurante cargarArchivo(String archivo1, String archivo2,String archivo3, String archivo4) throws FileNotFoundException, IOException
 	{
 		Map<String, Combo> combos = new HashMap<>();
 		Map<String, Ingrediente> ingredientes = new HashMap<>();
@@ -32,7 +32,7 @@ public class LoaderBurgers
 		BufferedReader br3 = new BufferedReader(new FileReader(archivo3));
 		String linea3 = br3.readLine();
 		
-		BufferedReader br4 = new BufferedReader(new FileReader(archivo3));
+		BufferedReader br4 = new BufferedReader(new FileReader(archivo4));
 		String linea4 = br4.readLine();
 		
 		while (linea4 != null) 
@@ -48,7 +48,7 @@ public class LoaderBurgers
 				laBebida=new Bebidas(bebida,precio,cal);
 				bebidas.put(bebida, laBebida);
 				
-				//System.out.println(o + ". " + plato + " " + precio);
+				//System.out.println( ". " + bebida + " " + precio + cal);
 				//o += 1;
 			}
 			linea4 = br4.readLine();
@@ -68,6 +68,8 @@ public class LoaderBurgers
 			{
 				elIngrediente = new Ingrediente (ingrediente, precio,cal);
 				ingredientes.put(ingrediente, elIngrediente);
+				
+				//System.out.println( ". " + ingrediente + " " + precio + " " +cal);
 			}
 			linea2 = br2.readLine();
 			
@@ -75,10 +77,11 @@ public class LoaderBurgers
 		
 		br2.close();
 
-		int o = 1;
+		//int o = 1;
 		while (linea3 != null) 
 		{
 			String[] partes3=linea3.split(";");
+			//System.out.println(partes3[1]);
 			String plato = partes3[0];
 			String precio = partes3[1];
 			String cal = partes3[2];
@@ -114,7 +117,7 @@ public class LoaderBurgers
 			Combo elCombo = combos.get(nombreCombo);
 			if (elCombo == null)
 			{
-				elCombo = new Combo(nombreCombo, descuento, hamburguesa, papas, bebida,cal, menu);
+				elCombo = new Combo(nombreCombo, descuento, hamburguesa, papas, bebida, cal, menu, bebidas);
 				combos.put(nombreCombo, elCombo);
 			 
 			}
